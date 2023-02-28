@@ -1,0 +1,19 @@
+{
+    "display": {
+      "icon": {
+        "item": "minecraft:creeper_head"
+      },
+      "title": "DokiCraft",
+      "description": "¡Bienvenid@ a DokiCraft!",
+      "frame": "task"
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:tick"
+      }
+    },
+    "rewards": {
+      "function": "doki:first_join"
+    }
+  }
+  
