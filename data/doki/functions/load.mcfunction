@@ -13,3 +13,4 @@ gamerule sendCommandFeedback false
 
 # MODO DEMO
 scoreboard players set #Demo doki.demo 1
+scoreboard players set @a doki.demo 1
