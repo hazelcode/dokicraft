@@ -1,7 +1,6 @@
 tellraw @s {"text": "Activando contador...","color": "yellow"}
-tellraw @a {"text": "El evento empezará en unos segundos...","color": "gold"}
-title @a title {"text": "DokiEvento en","color": "gold","bold": true}
-title @a subtitle {"text": "#@!","color": "red"}
+tellraw @a {"text": "El evento empezará en 1 minuto...","color": "gold"}
+tellraw @a {"text": "PRIMER AVISO","color": "red"}
 
 summon armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Invulnerable:true,Tags:["doki.point"]}
-schedule function doki:events/counter_3 1s
+schedule function doki:events/counter_30 30s
