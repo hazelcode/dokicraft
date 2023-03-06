@@ -4,4 +4,4 @@ tellraw @a {"text": "DokiEvento en 15 segundos...","color": "green"}
 tellraw @a {"text": "TERCER AVISO!!!","color": "red"}
 tellraw @a {"text": "LUEGO NO MAMEN CON QUE NO AVISAMOS CON TIEMPO","color": "red"}
 
-schedule function doki:events/counter_14 1s
+schedule function doki:events/counter/counter_14 1s
