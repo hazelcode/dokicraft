@@ -12,6 +12,7 @@ scoreboard objectives add doki.raidMembers dummy
 scoreboard objectives add doki.raidLevel dummy
 scoreboard objectives add doki.RaidChecker dummy
 scoreboard objectives add doki.RaidID dummy
+scoreboard objectives add doki.currntEvent dummy
 # Bossbars
 bossbar add doki:raid1 {"text": "Asalto"}
 bossbar set doki:raid1 players @a
@@ -24,3 +25,6 @@ gamerule sendCommandFeedback false
 # MODO DEMO
 scoreboard players set #Demo doki.demo 1
 scoreboard players set @a doki.demo 1
+
+# Eventos
+##scoreboard players set #Event doki.currntEvent 1 # Evento Raid
