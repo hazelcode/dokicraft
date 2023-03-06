@@ -1,0 +1,1 @@
+bossbar set doki:raid visible false
