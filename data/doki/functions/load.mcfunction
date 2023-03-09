@@ -10,7 +10,6 @@ scoreboard objectives add doki.ticks dummy
 scoreboard objectives add doki.seconds dummy
 scoreboard objectives add doki.raidMembers dummy
 scoreboard objectives add doki.raidLevel dummy
-scoreboard objectives add doki.RaidChecker dummy
 scoreboard objectives add doki.RaidID dummy
 scoreboard objectives add doki.currntEvent dummy
 # Bossbars
@@ -27,4 +26,4 @@ scoreboard players set #Demo doki.demo 1
 scoreboard players set @a doki.demo 1
 
 # Eventos
-##scoreboard players set #Event doki.currntEvent 1 # Evento Raid
+scoreboard players set #Event doki.currntEvent 1
