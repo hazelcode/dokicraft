@@ -8,5 +8,8 @@ bossbar set doki:raid1 style notched_20
 # Anunciar asalto
 tellraw @a {"text": "Un asalto se aproxima...","color": "red"}
 
+# Tag
+tag @r add doki.targetRaid
+
 # Ahora si empieza lo chido
-execute as @r at @s run schedule function doki:events/raids/raid_event1/level_1 7s
+execute as @a[tag=doki.targetRaid,limit=1] at @s run schedule function doki:events/raids/raid_event1/level_1 7s
