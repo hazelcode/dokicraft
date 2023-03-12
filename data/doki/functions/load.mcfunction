@@ -28,4 +28,6 @@ scoreboard players set #Demo doki.demo 1
 scoreboard players set @a doki.demo 1
 
 # Eventos
-scoreboard players set #Event doki.currntEvent 1
+#por el evento de este domingo, estará desactivado por poco tiempo (solo es eso)
+#scoreboard players set #Event doki.currntEvent 1
+scoreboard players set #Event doki.currntEvent 0
