@@ -32,3 +32,4 @@ execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1
 
 # Effects
 effect give @e[type=husk,tag=doki.raid1] speed 999999 3 true
+effect give @e[type=husk,tag=doki.raid1] glowing 10 1 true
