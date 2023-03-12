@@ -7,6 +7,7 @@ execute as @a[tag=doki.targetRaid,limit=1] at @s run summon armor_stand ~ ~ ~ {T
 scoreboard players set #ID doki.RaidID 1
 bossbar set doki:raid1 max 20
 bossbar set doki:raid1 style notched_20
+scoreboard objectives setdisplay sidebar doki.rdEv1KillC
 
 # Anunciar asalto
 tellraw @a {"text": "Un asalto se aproxima...","color": "red"}
