@@ -33,8 +33,7 @@ execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1
 execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1Point,limit=1] run summon husk ~-14 ~ ~10 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["doki.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]}
 execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1Point,limit=1] run summon husk ~-16 ~ ~14 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["doki.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]}
 # Effects
-effect give @e[type=husk,tag=doki.raid1] speed 999999 3 true
-effect give @e[type=husk,tag=doki.raid1] glowing 10 1 true
+effect give @e[tag=doki.raid1] glowing 10 1 true
 
 tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "1","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "3 minutos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
 schedule function doki:events/raids/raid_event1/level_2 180s

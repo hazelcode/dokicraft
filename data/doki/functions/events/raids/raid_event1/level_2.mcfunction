@@ -25,8 +25,7 @@ execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1
 execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1Point,limit=1] run summon blaze ~8 ~ ~5 {Silent:1b,CanPickUpLoot:1b,Health:80f,Tags:["doki.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:4b,Duration:999999},{Id:10,Amplifier:4b,Duration:999999},{Id:11,Amplifier:10b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:80},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]}
 execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1Point,limit=1] run summon blaze ~-3 ~ ~8 {Silent:1b,CanPickUpLoot:1b,Health:80f,Tags:["doki.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:4b,Duration:999999},{Id:10,Amplifier:4b,Duration:999999},{Id:11,Amplifier:10b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:80},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]}
 # Effects
-effect give @e[type=husk,tag=doki.raid1] speed 999999 3 true
-effect give @e[type=husk,tag=doki.raid1] glowing 10 1 true
+effect give @e[tag=doki.raid1] glowing 10 1 true
 
 tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "2","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "4 minutos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
 #schedule function doki:events/raids/raid_event1/level_3 240s
