@@ -1,0 +1,1 @@
+tellraw @a {"text": "Alerta! Las puntuaciones se resetearán pronto!","color": "red"}

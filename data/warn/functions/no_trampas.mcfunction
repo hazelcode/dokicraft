@@ -1,0 +1,1 @@
+tellraw @a {"text": "Prohibido hacer trampas, el que haga trampas o ejecute hacks será baneado.","color": "red"}
