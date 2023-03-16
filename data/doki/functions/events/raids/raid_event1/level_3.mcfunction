@@ -1,12 +1,12 @@
 # Level Set
-scoreboard players set #Level doki.raidLevel 2
+scoreboard players set #Level doki.raidLevel 3
 
 # Custom Sound
 playsound block.bell.resonate master @a
 
 # Display title
 title @a title {"text": "Asalto","color": "red","bold": true}
-title @a subtitle {"text": "Nivel 2","color": "gold"}
+title @a subtitle {"text": "Nivel 3","color": "gold"}
 
 # Summon Entities
 execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1Point,limit=1] run summon creeper ~13 ~ ~2 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["doki.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]}
@@ -27,5 +27,5 @@ execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1
 # Effects
 effect give @e[tag=doki.raid1] glowing 10 1 true
 
-tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "2","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "4 minutos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
-schedule function doki:events/raids/raid_event1/level_3 240s
+tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "3","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "3 minutos con 30 segundos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
+#schedule function doki:events/raids/raid_event1/level_4 210s

@@ -11,6 +11,7 @@ scoreboard objectives setdisplay sidebar doki.rdEv1KillC
 
 # Anunciar asalto
 tellraw @a {"text": "Un asalto se aproxima...","color": "red"}
+tellraw @a {"text": "¡Protege a tu base y a tus aldeanos!","color": "red"}
 
 # Ahora si empieza lo chido
 execute as @a[tag=doki.targetRaid,limit=1] at @s run schedule function doki:events/raids/raid_event1/level_1 7s
