@@ -15,6 +15,7 @@ scoreboard objectives add doki.currntEvent dummy
 scoreboard objectives add doki.KillCount playerKillCount {"text": "Contador de Kills","color": "red","bold": true}
 scoreboard objectives setdisplay sidebar doki.KillCount
 scoreboard objectives add doki.rdEv1KillC dummy {"text": "Raid 1 Kill Counter","color": "red","bold": true}
+scoreboard objectives add doki.joins dummy
 # Bossbars
 bossbar add doki:raid1 [{"text": "Asalto - "},{"text": "Entidades restantes: ","color": "yellow"},{"score":{"name": "#Count","objective": "doki.raidEv1Memb"},"color": "yellow"}]
 bossbar set doki:raid1 players @a
