@@ -7,3 +7,10 @@ execute unless score #Demo doki.demo matches 1 as @a[scores={doki.ticks=20..}] r
 
 # Bossbar Raids
 function doki:events/raids/bossbar_counters
+
+# Player Join Function Fixer
+execute as @a run function doki:join_function_fixer
+
+
+# Raid Bossbar Fixer
+bossbar set doki:raid1 players @a

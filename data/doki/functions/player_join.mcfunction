@@ -1,4 +1,3 @@
-advancement revoke @s only doki:player_join
 scoreboard players add @s doki.joins 1
 
 title @s title {"text": "DokiCraft","color": "#ff4aff"}

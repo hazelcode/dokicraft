@@ -1,3 +1,6 @@
+# Reset From Last Raid
+scoreboard players reset #Raid1Completion doki.Data
+
 # Level Set
 scoreboard players set #Level doki.raidLevel 1
 
@@ -35,5 +38,5 @@ execute as @a[tag=doki.targetRaid,limit=1] at @e[type=armor_stand,tag=doki.raid1
 # Effects
 effect give @e[tag=doki.raid1] glowing 10 1 true
 
-tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "1","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "3 minutos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
-schedule function doki:events/raids/raid_event1/level_2 180s
+tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "1","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "1 minuto con 30 segundos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}]
+schedule function doki:events/raids/raid_event1/level_2 90s
