@@ -9,4 +9,5 @@ Pendiente:
 - Raids Custom
 - Bosses Custom
 - Crafteos Custom
-- Eventos cada fin de semana :check:
+- Eventos cada fin de semana :heavy_check_mark:
+- Beacon de reaparición
