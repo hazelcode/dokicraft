@@ -1,0 +1,1 @@
+tellraw @a {"text": "Advertencia! Se aproxima un evento!","color": "yellow"}

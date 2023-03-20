@@ -1,0 +1,1 @@
+tellraw @a {"text": "Prohibido el pvp. Quien cometa pvp será sancionado","color": "red"}

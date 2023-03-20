@@ -1,0 +1,1 @@
+tellraw @a {"text": "El pvp está habilitado","color": "yellow"}
