@@ -9,4 +9,4 @@ Pendiente:
 - Raids Custom
 - Bosses Custom
 - Crafteos Custom
-- Eventos cada fin de semana
+- Eventos cada fin de semana :check:
