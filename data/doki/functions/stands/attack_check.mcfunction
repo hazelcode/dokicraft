@@ -1,0 +1,1 @@
+execute unless entity @s[advancements={doki:predicates/active_stand_separate=true}] run function doki:stands/deactivate_stand

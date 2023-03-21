@@ -14,3 +14,6 @@ execute as @a run function doki:join_function_fixer
 
 # Raid Bossbar Fixer
 bossbar set doki:raid1 players @a
+
+# Stands
+function doki:stands/teleport
