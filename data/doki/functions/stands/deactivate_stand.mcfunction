@@ -1,6 +1,8 @@
 # Desactivar stand
 
-execute as @a at @s run advancement revoke @s only doki:predicates/player_hurt_entity
+playsound minecraft:entity.enderman.teleport master @a[distance=..15]
+
+advancement revoke @s only doki:predicates/player_hurt_entity
 
 tag @a[distance=2.1..5] remove doki.standTarget
 tag @s remove doki.standSeparate
