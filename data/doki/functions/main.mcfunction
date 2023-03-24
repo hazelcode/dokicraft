@@ -17,3 +17,7 @@ bossbar set doki:raid1 players @a
 
 # Stands
 function doki:stands/teleport
+execute as @a[scores={doki.jump=1..},predicate=doki:sneaking] at @s run function doki:stands/activate_stand
+
+# Resetear Saltos
+scoreboard players reset @a doki.jump

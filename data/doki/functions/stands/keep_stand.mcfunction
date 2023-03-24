@@ -1,2 +1,2 @@
-advancement revoke @s only doki:predicates/active_stand_separate
-schedule function doki:stands/attack_check 3s
+execute as @a at @s run advancement revoke @s only doki:predicates/player_hurt_entity
+execute as @a at @s run schedule function doki:stands/attack_check 5s

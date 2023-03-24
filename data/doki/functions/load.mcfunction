@@ -19,6 +19,7 @@ scoreboard objectives add doki.rdEv1KillC dummy {"text": "Raid 1 Kill Counter","
 scoreboard objectives add doki.joins dummy
 scoreboard objectives add doki.joinFuncFix custom:leave_game
 scoreboard objectives add doki.Data dummy
+scoreboard objectives add doki.jump custom:jump
 # Bossbars
 bossbar add doki:raid1 [{"text": "Asalto - "},{"text": "Entidades restantes: ","color": "yellow"},{"score":{"name": "#Count","objective": "doki.raidEv1Memb"},"color": "yellow"}]
 bossbar set doki:raid1 players @a
