@@ -1,0 +1,2 @@
+give @s potion{pato:{id:1},display:{Name:'{"text": "Agua de sandía","italic":false}'},CustomPotionEffects:[{Id:1,Duration:900},{Id:3,Amplifier:1,Duration:900}],CustomPotionColor:16715544}
+tellraw @s [{"text": "Agua de sandía","italic":false},{"text": " giveada a ","color": "white"},{"selector": "@s","color": "white"}]
