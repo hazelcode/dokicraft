@@ -1,2 +1,0 @@
-execute as @a at @s unless entity @s[advancements={doki:predicates/player_hurt_entity=true}] run function doki:stands/deactivate_stand
-execute as @a at @s if entity @s[advancements={doki:predicates/player_hurt_entity=true}] run function doki:stands/keep_stand

@@ -1,0 +1,1 @@
+execute if score #ID pato.RaidID matches 1 run function pato:events/raids/raid_event1/bossbar_counter

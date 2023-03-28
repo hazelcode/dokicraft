@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "pato:player_join"
+  }
+}

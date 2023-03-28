@@ -1,5 +1,5 @@
-# DokiCraft 2.0
-Datapack para el server de DokiCraft
+# PatoLand 2.0
+Datapack para el server de PatoLand
 
 Fecha de lanzamiento aproximado:  
 Dentro de 2-3 semanas

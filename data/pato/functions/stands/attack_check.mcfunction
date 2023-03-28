@@ -1,0 +1,2 @@
+execute as @a at @s unless entity @s[advancements={pato:predicates/player_hurt_entity=true}] run function pato:stands/deactivate_stand
+execute as @a at @s if entity @s[advancements={pato:predicates/player_hurt_entity=true}] run function pato:stands/keep_stand

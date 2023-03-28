@@ -1,0 +1,16 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "entity": {
+            "nbt": "{Tags:[\"pato.raid1\"]}"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "pato:events/raids/raid_event1/kill_count"
+    }
+  }
+  

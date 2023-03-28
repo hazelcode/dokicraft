@@ -1,0 +1,1 @@
+execute as @r at @s if score #Event pato.currntEvent matches 1 run schedule function pato:events/raids/raid_event1/activate 3s

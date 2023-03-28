@@ -1,2 +1,0 @@
-give @s arrow{doki:{id:1},display:{Name:'{"text": "La Flecha De Stands","color": "aqua","italic": false}'}}
-tellraw @s [{"text": "La Flecha De Stands","color": "aqua","italic": false},{"text": " giveada a ","color": "white"},{"selector": "@s","color": "white"}]
