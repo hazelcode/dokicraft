@@ -13,6 +13,7 @@ scoreboard objectives add pato.raidLevel dummy
 scoreboard objectives add pato.RaidID dummy
 scoreboard objectives add pato.currntEvent dummy
 scoreboard objectives add pato.KillCount playerKillCount {"text": "Contador de Kills","color": "red","bold": true}
+scoreboard objectives add pato.Craft dummy
 #No se activara hasta nuevo evento
 #scoreboard objectives setdisplay sidebar pato.KillCount
 scoreboard objectives add pato.rdEv1KillC dummy {"text": "Raid 1 Kill Counter","color": "red","bold": true}

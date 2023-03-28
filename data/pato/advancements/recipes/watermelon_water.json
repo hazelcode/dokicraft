@@ -1,0 +1,14 @@
+{
+    "criteria": {
+      "unlock": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "pato:watermelon_water"
+        }
+      }
+    },
+    "rewards": {
+      "function": "pato:recipes/watermelon_water"
+    }
+  }
+  
