@@ -8,3 +8,6 @@ tellraw @a [{"text": "¡Bienvenido de nuevo a PatoLand, ","color": "yellow"},{"s
 tellraw @a [{"selector":"@s","color": "aqua"},{"text": " [+]","color": "green"}]
 
 playsound entity.ender_dragon.growl master @a
+
+execute as @s at @s if predicate pato:chance_10 run summon lightning_bolt
+execute as @s at @s if predicate pato:chance_01 run tp ~ ~25 ~
