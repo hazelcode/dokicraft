@@ -11,3 +11,5 @@ Pendiente:
 - Crafteos Custom
 - Eventos cada fin de semana :heavy_check_mark:
 - Beacon de reaparición
+- Eskimos :heavy_check_mark:
+- Agua de sandia :heavy_check_mark:
