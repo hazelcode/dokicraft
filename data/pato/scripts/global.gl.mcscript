@@ -1,0 +1,40 @@
+// Variables
+/scoreboard objectives add pato.health health;
+/scoreboard objectives modify pato.health displayname {"text": "de vida","color": "gold"};
+/scoreboard objectives setdisplay belowName pato.health;
+/scoreboard objectives setdisplay list pato.health;
+var pato.demo;
+var pato.ticks;
+var pato.seconds;
+var pato.raidEv1Memb;
+var pato.raidLevel;
+var pato.RaidID;
+var pato.currntEvent;
+/scoreboard objectives add pato.KillCount playerKillCount {"text": "Contador de Kills","color": "red","bold": true};
+var pato.Craft;
+/scoreboard objectives add pato.rdEv1KillC dummy {"text": "Raid 1 Kill Counter","color": "red","bold": true};
+var pato.joins;
+/scoreboard objectives add pato.joinFuncFix custom:leave_game;
+var pato.Data;
+/scoreboard objectives add pato.jump custom:jump;
+
+// Modales
+modal ScoreReset(scoreboard,target){
+    /scoreboard players reset $(target) $(scoreboard);
+}
+modal DisplayTitle(target,type,json_text){
+    /title $(target) $(type) $(json_text);
+}
+modal RecipeRevoke(recipeName){
+    /advancement revoke @s only pato:recipes/$(recipeName);
+    /recipe take @s pato:$(recipeName);
+}
+modal ClearResult(item){
+    /execute store result score @s pato.Craft run clear @s $(item);
+}
+modal CraftSound(sound,target = "@s",location = "~ ~ ~"){
+    /playsound $(sound) master $(target) $(location);
+}
+modal store(args){
+    /execute store $(args);
+}

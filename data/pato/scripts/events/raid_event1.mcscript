@@ -1,0 +1,198 @@
+#file: ./raids/raid_event1/activate
+# Tag
+bool pato.targetRaid @r = true;
+
+# Setup
+/bossbar set pato:raid1 visible true;
+
+asat(@a[tag=pato.targetRaid,limit=1]){
+    /summon armor_stand ~ ~ ~ {Tags:[pato.raid1Point],Invisible:1b,Invulnerable:1b,NoGravity:1b};
+}
+
+/scoreboard players set .ID pato.RaidID 1;
+/bossbar set pato:raid1 max 20;
+/bossbar set pato:raid1 style notched_20;
+/scoreboard objectives setdisplay sidebar pato.rdEv1KillC;
+
+# Anunciar asalto
+/tellraw @a {"text": "Un asalto se aproxima...","color": "red"};
+/tellraw @a {"text": "¡Protege a tu base y a tus aldeanos!","color": "red"};
+
+# Ahora si empieza lo chido
+asat(@a[tag=pato.targetRaid,limit=1]){
+    /schedule function pato:events/raids/raid_event1/level_1 7s;
+}
+
+#file: ./raids/raid_event1/level_1
+# Reset From Last Raid
+/scoreboard players reset .Raid1Completion pato.Data;
+
+# Level Set
+/scoreboard players set .Level pato.raidLevel 1;
+
+# Custom Sound
+/playsound block.bell.resonate master @a;
+
+# Display title
+/title @a title {"text": "Asalto","color": "red","bold": true};
+/title @a subtitle {"text": "Nivel 1","color": "gold"};
+
+# Tag
+pato.targetRaid @r = true;
+
+# Summon Entities
+as(@a[tag=pato.targetRaid,limit=1]), at(@e[type=armor_stand,tag=pato.raid1Point,limit=1]){
+    /summon husk ~-1 ~ ~5 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~1 ~ ~3 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-3 ~ ~-4 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-7 ~ ~-9 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~9 ~ ~-4 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~1 ~ ~-1 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-5 ~ ~5 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~14 ~ ~-4 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-1 ~ ~3 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~3 ~ ~3 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~7 ~ ~8 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~8 ~ ~6 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-7 ~ ~-4 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-3 ~ ~-6 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-8 ~ ~-8 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-13 ~ ~13 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~9 ~ ~-11 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-12 ~ ~-9 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-14 ~ ~10 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon husk ~-16 ~ ~14 {Glowing:1b,CustomNameVisible:1b,Health:75f,Tags:["pato.raid1"],CustomName:'{"text":"Momia","color": "yellow"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+}
+# Effects
+/effect give @e[tag=pato.raid1] glowing 10 1 true;
+
+/tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "1","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "1 minuto con 30 segundos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}];
+/schedule function pato:events/raids/raid_event1/level_2 90s;
+
+#file: ./raids/raid_event1/level_2
+# Level Set
+/scoreboard players set .Level pato.raidLevel 2;
+
+# Custom Sound
+/playsound block.bell.resonate master @a;
+
+# Display title
+/title @a title {"text": "Asalto","color": "red","bold": true};
+/title @a subtitle {"text": "Nivel 2","color": "gold"};
+
+# Reward
+
+/give @r totem_of_undying;
+/give @r golden_apple;
+
+# Summon Entities
+as(@a[tag=pato.targetRaid,limit=1]), at(@e[type=armor_stand,tag=pato.raid1Point,limit=1]){
+    /summon creeper ~13 ~ ~2 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~10 ~ ~-8 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~-7 ~ ~9 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~-15 ~ ~8 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~5 ~ ~-9 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~17 ~ ~-15 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon creeper ~-16 ~ ~16 {Glowing:1b,CustomNameVisible:0b,Health:75f,ExplosionRadius:75b,Fuse:30,Tags:["pato.raid1"],CustomName:'{"text":"Peta peta","color":"red"}',ArmorItems:[{id:"minecraft:iron_boots",Count:1b},{},{},{id:"minecraft:creeper_head",Count:1b}],Attributes:[{Name:"minecraft:generic.attack_damage",Base:6}]};
+    /summon blaze ~4 ~ ~-5 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~15 ~ ~9 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~-9 ~ ~8 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~17 ~ ~-13 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~14 ~ ~13 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~-11 ~ ~-12 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~8 ~ ~5 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+    /summon blaze ~-3 ~ ~8 {Silent:1b,CanPickUpLoot:1b,Health:10f,Tags:["pato.raid1"],CustomName:'{"text":"Quemapies","color":"gold"}',ActiveEffects:[{Id:1,Amplifier:1b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999},{Id:11,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:10},{Name:"minecraft:generic.knockback_resistance",Base:0.8},{Name:"minecraft:generic.attack_damage",Base:7}]};
+}
+# Effects
+/effect give @e[tag=pato.raid1] glowing 10 1 true;
+
+/tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "2","color": "gold"},{"text": ". Tienes ","color": "yellow"},{"text": "3 minutos ","color": "red"},{"text": "para terminar con la oleada.","color": "yellow"}];
+/schedule function pato:events/raids/raid_event1/level_3 180s;
+
+#file: ./raids/raid_event1/level_3
+# Level Set
+/scoreboard players set .Level pato.raidLevel 3;
+
+# Custom Sound
+/playsound block.bell.resonate master @a;
+
+# Display title
+/title @a title {"text": "Asalto","color": "red","bold": true};
+/title @a subtitle {"text": "Nivel 3","color": "gold"};
+
+# Reward
+
+/give @r totem_of_undying;
+/give @r totem_of_undying;
+/give @r enchanted_golden_apple;
+
+# Summon Entities
+as(@a[tag=pato.targetRaid,limit=1]), at(@e[type=armor_stand,tag=pato.raid1Point,limit=1]){
+    /summon ravager ~5 ~ ~-9 {CustomNameVisible:0b,Health:300f,AttackTick:10,RoarTick:20,StunTick:10,Tags:["pato.raid1"],CustomName:'{"text":"DEMOLEDOR","color":"dark_red","bold":true}',ActiveEffects:[{Id:1,Amplifier:2b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:300},{Name:"minecraft:generic.knockback_resistance",Base:0.95},{Name:"minecraft:generic.attack_damage",Base:10}]};
+    /summon ravager ~-15 ~ ~11 {CustomNameVisible:0b,Health:300f,AttackTick:10,RoarTick:20,StunTick:10,Tags:["pato.raid1"],CustomName:'{"text":"DEMOLEDOR","color":"dark_red","bold":true}',ActiveEffects:[{Id:1,Amplifier:2b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:300},{Name:"minecraft:generic.knockback_resistance",Base:0.95},{Name:"minecraft:generic.attack_damage",Base:10}]};
+    /summon ravager ~17 ~ ~9 {CustomNameVisible:0b,Health:300f,AttackTick:10,RoarTick:20,StunTick:10,Tags:["pato.raid1"],CustomName:'{"text":"DEMOLEDOR","color":"dark_red","bold":true}',ActiveEffects:[{Id:1,Amplifier:2b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:300},{Name:"minecraft:generic.knockback_resistance",Base:0.95},{Name:"minecraft:generic.attack_damage",Base:10}]};
+    /summon ravager ~20 ~ ~-16 {CustomNameVisible:0b,Health:300f,AttackTick:10,RoarTick:20,StunTick:10,Tags:["pato.raid1"],CustomName:'{"text":"DEMOLEDOR","color":"dark_red","bold":true}',ActiveEffects:[{Id:1,Amplifier:2b,Duration:999999},{Id:10,Amplifier:1b,Duration:999999}],Attributes:[{Name:"minecraft:generic.max_health",Base:300},{Name:"minecraft:generic.knockback_resistance",Base:0.95},{Name:"minecraft:generic.attack_damage",Base:10}]};
+}
+
+
+# Effects
+/effect give @e[tag=pato.raid1] glowing 10 1 true;
+
+/tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "FINAL","color": "dark_red","bold": true,"underlined": true,"italic": true},{"text": ". Tienes ","color": "yellow"},{"text": "3 minutos ","color": "red"},{"text": "para terminar con la oleada para ","color": "yellow"},{"text": "PASAR A LA BOSS FIGHT","color": "dark_red","bold": true,"italic": true,"underlined": true}];
+/schedule function pato:events/raids/raid_event1/level_bossfight 180s;
+
+#file: ./raids/raid_event1/level_bossfight
+# Level Set
+# La bossfight no requiere de esto
+
+# Custom Sound
+/playsound block.bell.resonate master @a;
+
+# Display title
+/title @a title {"text": "Asalto","color": "red","bold": true};
+/title @a subtitle [{"text": "Nivel ","color": "gold"},{"text": "BOSS FIGHT","color": "dark_red","bold": true,"italic": true,"underlined": true}];
+
+# Reward
+
+/give @r totem_of_undying;
+/give @r totem_of_undying;
+/give @r totem_of_undying;
+/give @r totem_of_undying;
+/give @r enchanted_golden_apple;
+/give @r enchanted_golden_apple;
+/give @r enchanted_golden_apple;
+
+# Summon Entities
+as(@a[tag=pato.targetRaid,limit=1]), at(@e[type=armor_stand,tag=pato.raid1Point,limit=1]){
+    /summon ravager ~ ~ ~ {Tags:["pato.raid1"],Passengers:[{id:"minecraft:evoker",Tags:["pato.raid1"],PersistenceRequired:1,CanPickUpLoot:1b,CustomName:'{"text": "EVOKER BOSS","color": "dark_red","bold": true,"italic": true, "underlined": true}',CustomNameVisible:true,ActiveEffects:[{Id:1,Amplifier:2,Duration:999999,ShowParticles:0b},{Id:10,Amplifier:2,Duration:999999,ShowParticles:0b},{Id:11,Amplifier:0,Duration:999999,ShowParticles:0b},{Id:21,Amplifier:5,Duration:999999,ShowParticles:0b},{Id:22,Amplifier:3,Duration:999999,ShowParticles:0b}]}]};
+}
+
+# Effects
+/effect give @e[tag=pato.raid1] glowing 10 1 true;
+
+/tellraw @a [{"text": "Raid nivel ","color": "yellow"},{"text": "BOSSFIGHT","color": "dark_red","bold": true,"underlined": true,"italic": true},{"text": ", ","color": "yellow"},{"text": "PREPARA EL CULO","color": "dark_red","bold": true,"italic": true,"underlined": true}];
+/schedule function pato:events/raids/raid_event1/check_completion 2s;
+
+#file: ./raids/raid_event1/check_completion
+if(!'entity @e[tag=pato.raid1]'){
+    /function pato:events/raids/raid_event1/random_rewards;
+}
+if (pato.Data .Raid1Completion == 1) {
+    /schedule clear pato:events/raids/raid_event1/check_completion;
+} else {
+    /schedule function pato:events/raids/raid_event1/check_completion 2s;
+}
+
+#file: ./raids/raid_event1/random_rewards
+/tellraw @a {"text": "Repartiendo recompensas aleatorias... Las 4 personas que tengan más de 10 kills se llevan las recompensas"};
+/give @r[scores={pato.rdEv1KillC=10..}] sculk_sensor;
+/give @r[scores={pato.rdEv1KillC=10..}] jukebox;
+/give @r[scores={pato.rdEv1KillC=10..}] sculk_sensor;
+/give @r[scores={pato.rdEv1KillC=10..}] jukebox;
+/scoreboard players set .Raid1Completion pato.Data 1;
+/schedule clear pato:events/raids/raid_event1/check_completion;
+
+#file: ./raids/raid_event1/kill_count
+/advancement revoke @s only pato:events/raids/raid_event1/kill_count;
+var pato.rdEv1KillC;
+pato.rdEv1KillC @s += 1;

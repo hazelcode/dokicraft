@@ -1,0 +1,32 @@
+#file: ./main
+
+# Contar segundos NO DEMO
+unless(pato.demo .Demo == 1){
+    pato.ticks @a += 1;
+}
+unless(pato.demo .Demo == 1){
+    as(@a[scores={pato.ticks=20..}]){
+        pato.seconds @s += 1;
+        ScoreReset('pato.seconds', '@s');
+    }
+}
+
+# Bossbar Raids
+/function pato:events/raids/bossbar_counters;
+
+# Player Join Function Fixer
+as(@a){
+    /function pato:join_function_fixer;
+}
+
+# Raid Bossbar Fixer
+/bossbar set pato:raid1 players @a;
+
+# Stands
+/function pato:stands/teleport;
+asat(@a[scores={pato.jump=1..},predicate=pato:sneaking]){
+    /function pato:stands/activate_stand;
+}
+
+# Resetear Saltos
+ScoreReset('pato.jump', '@a');

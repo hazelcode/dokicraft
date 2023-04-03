@@ -1,0 +1,21 @@
+#file: ./recipes/eskimo
+RecipeRevoke("eskimo");
+ClearResult('command_block');
+if (pato.Craft @s >= 1) {
+    /summon item ~ ~ ~ {Tags:["tagtemporal"],Item:{id:"potion",Count:1b,tag:{pato:{id:2},display:{Name:'{"text": "Eskimo","italic":false}'},CustomPotionEffects:[{Id:1,Duration:900},{Id:1,Amplifier:1,Duration:900}],CustomPotionColor:8191841}}};
+}
+CraftSound('item.bottle.fill');
+if(pato.Craft @s >= 1){
+    store("result entity @e[type=item,distance=..1,tag=tagtemporal,limit=1] Item.Count byte 1 run scoreboard players get @s pato.Craft");
+}
+
+#file: ./recipes/watermelon_water
+RecipeRevoke('watermelon_water');
+ClearResult('command_block');
+if (pato.Craft @s >= 1) {
+    /summon item ~ ~ ~ {Tags:["tagtemporal"],Item:{id:"potion",Count:1b,tag:{pato:{id:1},display:{Name:'{"text": "Agua de sandía","italic":false}'},CustomPotionEffects:[{Id:1,Duration:900},{Id:3,Amplifier:1,Duration:900}],CustomPotionColor:16715544}}};
+}
+CraftSound('item.bottle.fill');
+if(pato.Craft @s >= 1){
+    store("result entity @e[type=item,distance=..1,tag=tagtemporal,limit=1] Item.Count byte 1 run scoreboard players get @s pato.Craft");
+}

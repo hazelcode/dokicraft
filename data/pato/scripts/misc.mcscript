@@ -1,0 +1,5 @@
+#file: ./counter_trigger
+/tellraw @s {"text": "[ACTIVAR CONTADOR]","color": "red","clickEvent": {"action": "run_command","value": "/function pato:events/counter/counter_activate"}};
+
+#file: ./warn_light
+/summon lightning_bolt ~ ~ ~;

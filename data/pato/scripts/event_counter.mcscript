@@ -1,0 +1,97 @@
+#extend: ./main
+for(1,30){
+    #file: ./events/counter/counter_$(i)
+    /title @a actionbar {"text": "PatoEvento en $(i) segundos...","color": "green"};
+}
+
+
+#extend: ./events/counter/counter_30
+/schedule function pato:events/counter/counter_29 1s;
+#extend: ./events/counter/counter_29
+/schedule function pato:events/counter/counter_28 1s;
+#extend: ./events/counter/counter_28
+/schedule function pato:events/counter/counter_27 1s;
+#extend: ./events/counter/counter_27
+/schedule function pato:events/counter/counter_26 1s;
+#extend: ./events/counter/counter_26
+/schedule function pato:events/counter/counter_25 1s;
+#extend: ./events/counter/counter_25
+/schedule function pato:events/counter/counter_24 1s;
+#extend: ./events/counter/counter_24
+/schedule function pato:events/counter/counter_23 1s;
+#extend: ./events/counter/counter_23
+/schedule function pato:events/counter/counter_22 1s;
+#extend: ./events/counter/counter_22
+/schedule function pato:events/counter/counter_21 1s;
+#extend: ./events/counter/counter_21
+/schedule function pato:events/counter/counter_20 1s;
+#extend: ./events/counter/counter_20
+/schedule function pato:events/counter/counter_19 1s;
+#extend: ./events/counter/counter_19
+/schedule function pato:events/counter/counter_18 1s;
+#extend: ./events/counter/counter_18
+/schedule function pato:events/counter/counter_17 1s;
+#extend: ./events/counter/counter_17
+/schedule function pato:events/counter/counter_16 1s;
+#extend: ./events/counter/counter_16
+/schedule function pato:events/counter/counter_15 1s;
+#extend: ./events/counter/counter_15
+/schedule function pato:events/counter/counter_14 1s;
+#extend: ./events/counter/counter_14
+/schedule function pato:events/counter/counter_13 1s;
+#extend: ./events/counter/counter_13
+/schedule function pato:events/counter/counter_12 1s;
+#extend: ./events/counter/counter_12
+/schedule function pato:events/counter/counter_11 1s;
+#extend: ./events/counter/counter_11
+/schedule function pato:events/counter/counter_10 1s;
+#extend: ./events/counter/counter_10
+/schedule function pato:events/counter/counter_9 1s;
+#extend: ./events/counter/counter_9
+/schedule function pato:events/counter/counter_8 1s;
+#extend: ./events/counter/counter_8
+/schedule function pato:events/counter/counter_7 1s;
+#extend: ./events/counter/counter_7
+/schedule function pato:events/counter/counter_6 1s;
+#extend: ./events/counter/counter_6
+/schedule function pato:events/counter/counter_5 1s;
+#extend: ./events/counter/counter_5
+/title @a title {"text": "PatoEvento en","color": "gold","bold": true};
+/title @a subtitle {"text": "5","color": "green"};
+/tellraw @a {"text": "PatoEvento en 5 segundos...","color": "green"};
+/schedule function pato:events/counter/counter_4 1s;
+#extend: ./events/counter/counter_4
+/title @a title {"text": "PatoEvento en","color": "gold","bold": true};
+/title @a subtitle {"text": "4","color": "green"};
+/tellraw @a {"text": "PatoEvento en 4 segundos...","color": "green"};
+/schedule function pato:events/counter/counter_3 1s;
+#extend: ./events/counter/counter_3
+/title @a title {"text": "PatoEvento en","color": "gold","bold": true};
+/title @a subtitle {"text": "3","color": "green"};
+/tellraw @a {"text": "PatoEvento en 3 segundos...","color": "green"};
+/schedule function pato:events/counter/counter_2 1s;
+#extend: ./events/counter/counter_2
+/title @a title {"text": "PatoEvento en","color": "gold","bold": true};
+/title @a subtitle {"text": "2","color": "green"};
+/tellraw @a {"text": "PatoEvento en 2 segundos...","color": "green"};
+/schedule function pato:events/counter/counter_1 1s;
+#extend: ./events/counter/counter_1
+/title @a title {"text": "PatoEvento en","color": "gold","bold": true};
+/title @a subtitle {"text": "1","color": "green"};
+/tellraw @a {"text": "PatoEvento en 1 segundos...","color": "green"};
+/schedule function pato:events/counter/counter_go 1s;
+
+#file: ./events/counter/counter_go
+/title @a title {"text": "Let's Go!","color": "green","bold": true,"italic": true};
+/tellraw @a {"text": "LET'S GO!!!","color": "red","bold": true,"italic": true};
+/tp @a @e[type=armor_stand,tag=pato.point,limit=1];
+/kill @e[type=armor_stand,tag=pato.point];
+
+/function pato:events/counter/schedule_events;
+
+#file: ./events/counter/schedule_events
+as(@r), at(@s){
+    if(pato.currntEvent .Event == 1){
+        /schedule function pato:events/raids/raid_event1/activate 3s;
+    }
+}

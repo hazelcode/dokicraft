@@ -1,0 +1,50 @@
+#file: ./activate_stand
+/effect give @s[tag=!pato.standSeparate] invisibility 2 1 true;
+pato.standTarget @a[distance=2.1..5] = true;
+pato.standSeparate @s = true;
+/effect clear @e[limit=1,tag=pato.stand,distance=..5];
+/data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI:0b, Invulnerable: false,CustomNameVisible: true, Silent:false};
+
+asat(@a){
+    /schedule function pato:stands/attack_check 5s;
+}
+
+#file: ./attack_check
+asat(@a), if(!'entity @s[advancements={pato:predicates/player_hurt_entity=true}]'){
+    /function pato:stands/deactivate_stand;
+}
+asat(@a), if('entity @s[advancements={pato:predicates/player_hurt_entity=true}]'){
+    /function pato:stands/keep_stand;
+}
+
+#file: ./deactivate_stand
+# Desactivar stand
+
+/playsound minecraft:entity.enderman.teleport master @a[distance=..15];
+/advancement revoke @s only pato:predicates/player_hurt_entity;
+pato.standTarget @a[distance=2.1..5] = false;
+pato.standSeparate @s = false;
+/data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
+/data merge entity @e[limit=1,tag=pato.stand,sort=nearest] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
+/effect give @e[limit=1,tag=pato.stand,distance=..5] invisibility infinite 1 true;
+
+#file: ./keep_stand
+asat(@a){
+    /advancement revoke @s only pato:predicates/player_hurt_entity;
+    /schedule function pato:stands/attack_check 5s;
+}
+
+#file: ./teleport
+asat(@e[tag=pato.stand]){
+    if('entity @p[distance=..5,limit=1]'){
+        /tp @p[distance=..5,sort=nearest,limit=1,tag=!pato.standTarget,tag=!pato.standSeparate];
+    } else {
+        /effect clear @s;
+    }
+    if('entity @p[distance=..5,limit=1,tag=!pato.standSeparate]'){
+        /effect give @s invisibility infinite 1 true;
+    }
+}
+asat(@a[tag=!pato.standTarget,tag=!pato.standSeparate]){
+    /tp @e[tag=pato.stand,distance=..5] ~2 ~ ~;
+}

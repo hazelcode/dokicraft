@@ -1,0 +1,17 @@
+#file: ./first_join
+/give @s wooden_pickaxe;
+/give @s wooden_axe;
+/give @s cooked_beef 4;
+
+#file: ./join_function_fixer
+if(pato.joinFuncFix @s == 1){
+    /advancement revoke @s only pato:player_join;
+    ScoreReset('pato.joinFuncFix','@s');
+}
+
+#file: ./player_join
+pato.joins @s += 1;
+
+DisplayTitle('@s','title','{"text": "PatoLand","color": "yellow"}');
+DisplayTitle('@s','subtitle','{"text": "¡Bienvenido al servidor!","color": "gold"}');
+DisplayTitle('@s','actionbar','[{"score":{"name": "@s","objective": "pato.joins"},"color": "dark_green"},{"text": " Joins","color": "green"}]');
