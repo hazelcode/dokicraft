@@ -36,3 +36,4 @@ run function "./stands/yellow_blaze/tick" {
         /function pato:stands/yellow_blaze/magma_cubes;
     }
 }
+/function pato:stand_arrow/target_selector;
