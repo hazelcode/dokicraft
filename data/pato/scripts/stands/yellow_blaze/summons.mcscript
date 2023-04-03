@@ -7,8 +7,8 @@ asat(@e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze]){
     if(yBlaze.tickSummon >= 200){
         /tellraw @a[distance=..15] {"text": "Yellow Blaze. Infernal Cube!", "color": "red"};
         /summon magma_cube ~ ~ ~;
-        /effect give @a[distance=2.1..15] slowness 4 3;
-        /effect give @s regeneration 4 4;
+        AddEffect('@a[distance=2.1..15]','slowness','4','3');
+        AddEffect('@s','regeneration','4','4');
         ScoreReset('yBlaze.tickSummon','yBlaze.tickSummon');
     }
 }

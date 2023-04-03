@@ -7,6 +7,6 @@
 execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s run scoreboard players add yBlaze.tickSummon yBlaze.tickSummon 1
 execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run tellraw @a[distance=..15] {"text": "Yellow Blaze. Infernal Cube!", "color": "red"}
 execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run summon magma_cube ~ ~ ~
-execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run effect give @a[distance=2.1..15] slowness 4 3
-execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run effect give @s regeneration 4 4
+execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run effect give @a[distance=2.1..15] slowness 4 3 true
+execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run effect give @s regeneration 4 4 true
 execute as @e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze] at @s if score yBlaze.tickSummon yBlaze.tickSummon matches 200.. run scoreboard players reset yBlaze.tickSummon yBlaze.tickSummon

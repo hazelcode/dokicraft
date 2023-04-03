@@ -41,3 +41,9 @@ modal CraftSound(sound,target = "@s",location = "~ ~ ~"){
 modal store(args){
     /execute store $(args);
 }
+modal AddEffect(target,effect,duration = "30",level = "0",hideParticles = "true"){
+    /effect give $(target) $(effect) $(duration) $(level) $(hideParticles);
+}
+modal ClearEffect(target,effect = ""){
+    /effect clear $(target) $(effect);
+}
