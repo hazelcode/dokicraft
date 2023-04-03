@@ -2,16 +2,13 @@
 // 20 ticks/s
 // 20 ticks * 10s = 200 ticks
 
-while(yBlaze.tickSummon <= 200){
-    if(yBlaze.tickSummon < 200){
-        yBlaze.tickSummon += 1;
-    } else {
-        asat(@s[tag=stand.active]){
-            /summon magma_cube ~ ~ ~;
-            /effect give @a[2.1..15] slowness 4 3;
-            /effect give @s regeneration 4 4;
-            /tellraw @a[distance=..15] {"text": "Yellow Blaze. Infernal Cube!", "color": "red"};
-        }
+asat(@e[tag=pato.stand, tag=stand.active, tag=stand.yellow_blaze]){
+    yBlaze.tickSummon +=1;
+    if(yBlaze.tickSummon >= 200){
+        /tellraw @a[distance=..15] {"text": "Yellow Blaze. Infernal Cube!", "color": "red"};
+        /summon magma_cube ~ ~ ~;
+        /effect give @a[distance=2.1..15] slowness 4 3;
+        /effect give @s regeneration 4 4;
         ScoreReset('yBlaze.tickSummon','yBlaze.tickSummon');
     }
 }

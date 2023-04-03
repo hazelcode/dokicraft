@@ -15,6 +15,8 @@ scoreboard objectives setdisplay list pato.health
 
 
 
+
+
 scoreboard objectives add pato.KillCount playerKillCount {"text": "Contador de Kills","color": "red","bold": true}
 
 scoreboard objectives add pato.rdEv1KillC dummy {"text": "Raid 1 Kill Counter","color": "red","bold": true}

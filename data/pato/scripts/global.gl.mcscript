@@ -3,10 +3,12 @@
 /scoreboard objectives modify pato.health displayname {"text": "de vida","color": "gold"};
 /scoreboard objectives setdisplay belowName pato.health;
 /scoreboard objectives setdisplay list pato.health;
+var patio.demo;
 var pato.demo;
 var pato.ticks;
 var pato.seconds;
 var pato.raidEv1Memb;
+var pato.rdEv1KillC
 var pato.raidLevel;
 var pato.RaidID;
 var pato.currntEvent;

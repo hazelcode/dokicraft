@@ -12,4 +12,4 @@ tag @s remove pato.standSeparate
 data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true}
 data merge entity @e[limit=1,tag=pato.stand,sort=nearest] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true}
 effect give @e[limit=1,tag=pato.stand,distance=..5] invisibility infinite 1 true
-tag @e[limit=1,tag=pato.stand,distance=..5] add stand.active
+tag @e[limit=1,tag=pato.stand,distance=..5] remove stand.active

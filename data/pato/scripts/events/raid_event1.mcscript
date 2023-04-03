@@ -194,5 +194,4 @@ if (pato.Data .Raid1Completion == 1) {
 
 #file: ./raids/raid_event1/kill_count
 /advancement revoke @s only pato:events/raids/raid_event1/kill_count;
-var pato.rdEv1KillC;
 pato.rdEv1KillC @s += 1;

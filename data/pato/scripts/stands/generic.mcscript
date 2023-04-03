@@ -28,7 +28,7 @@ pato.standSeparate @s = false;
 /data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
 /data merge entity @e[limit=1,tag=pato.stand,sort=nearest] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
 /effect give @e[limit=1,tag=pato.stand,distance=..5] invisibility infinite 1 true;
-stand.active @e[limit=1,tag=pato.stand,distance=..5] = true;
+stand.active @e[limit=1,tag=pato.stand,distance=..5] = false;
 
 #file: ./keep_stand
 asat(@a){
