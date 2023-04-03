@@ -21,3 +21,4 @@ function pato:stands/teleport
 execute as @a[scores={pato.jump=1..},predicate=pato:sneaking] at @s run function pato:stands/activate_stand
 # Resetear Saltos
 scoreboard players reset @a pato.jump
+function pato:stands/yellow_blaze/tick

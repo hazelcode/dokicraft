@@ -4,6 +4,7 @@ pato.standTarget @a[distance=2.1..5] = true;
 pato.standSeparate @s = true;
 /effect clear @e[limit=1,tag=pato.stand,distance=..5];
 /data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI:0b, Invulnerable: false,CustomNameVisible: true, Silent:false};
+bool stand.active @e[limit=1,tag=pato.stand,distance=..5] = true;
 
 asat(@a){
     /schedule function pato:stands/attack_check 5s;
@@ -27,6 +28,7 @@ pato.standSeparate @s = false;
 /data merge entity @e[limit=1,tag=pato.stand,distance=..5] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
 /data merge entity @e[limit=1,tag=pato.stand,sort=nearest] {NoAI: true, Invulnerable: true,CustomNameVisible: false,Silent: true};
 /effect give @e[limit=1,tag=pato.stand,distance=..5] invisibility infinite 1 true;
+stand.active @e[limit=1,tag=pato.stand,distance=..5] = true;
 
 #file: ./keep_stand
 asat(@a){

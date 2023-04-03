@@ -17,6 +17,7 @@ var pato.joins;
 /scoreboard objectives add pato.joinFuncFix custom:leave_game;
 var pato.Data;
 /scoreboard objectives add pato.jump custom:jump;
+var yBlaze.tickSummon;
 
 // Modales
 modal ScoreReset(scoreboard,target){

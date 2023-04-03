@@ -30,3 +30,9 @@ asat(@a[scores={pato.jump=1..},predicate=pato:sneaking]){
 
 # Resetear Saltos
 ScoreReset('pato.jump', '@a');
+
+run function "./stands/yellow_blaze/tick" {
+    asat(@e[tag=stand.yellow_blaze,tag=stand.active]){
+        /function pato:stands/yellow_blaze/magma_cubes;
+    }
+}

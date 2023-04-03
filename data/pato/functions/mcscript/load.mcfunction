@@ -15,6 +15,7 @@ scoreboard objectives add pato.currntEvent dummy
 scoreboard objectives add pato.Craft dummy
 scoreboard objectives add pato.joins dummy
 scoreboard objectives add pato.Data dummy
+scoreboard objectives add yBlaze.tickSummon dummy
 
 # Extended from pato/functions/events/raid_event1.mcscript
 # to data/pato/functions/mcscript/load.mcfunction
