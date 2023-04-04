@@ -20,6 +20,9 @@ var pato.joins;
 var pato.Data;
 /scoreboard objectives add pato.jump custom:jump;
 var yBlaze.tickSummon;
+var register trigger;
+var login trigger;
+var pato.password;
 
 // Modales
 modal ScoreReset(scoreboard,target){
@@ -46,4 +49,7 @@ modal AddEffect(target,effect,duration = "30",level = "0",hideParticles = "true"
 }
 modal ClearEffect(target,effect = ""){
     /effect clear $(target) $(effect);
+}
+modal ReadInput(inputVar,outputVar,target){
+    /execute store result score $(target) $(outputVar) run scoreboard players operation $(target) $(outputVar) = $(target) $(inputVar);
 }
