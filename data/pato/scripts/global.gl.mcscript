@@ -23,6 +23,8 @@ var yBlaze.tickSummon;
 var register trigger;
 var login trigger;
 var pato.password;
+var pato.subtraction;
+var pato.equals;
 
 // Modales
 modal ScoreReset(scoreboard,target){
@@ -52,4 +54,12 @@ modal ClearEffect(target,effect = ""){
 }
 modal ReadInput(inputVar,outputVar,target){
     /execute store result score $(target) $(outputVar) run scoreboard players operation $(target) $(outputVar) = $(target) $(inputVar);
+}
+modal ReadEquals(inputTarget,inputVar,selectedTarget,selectedVar){
+    /scoreboard players operation @s pato.subtraction = $(inputTarget) $(inputVar);
+    /execute store result score $(inputTarget) pato.equals run scoreboard players operation $(inputTarget) pato.subtraction -= $(selectedTarget) $(selectedVar);
+    /scoreboard players reset $(inputTarget) pato.subtraction;
+}
+modal EnableTrigger (target,triggerName) {
+    /scoreboard players enable $(target) $(triggerName);
 }

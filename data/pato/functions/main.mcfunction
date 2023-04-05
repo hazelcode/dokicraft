@@ -23,3 +23,6 @@ execute as @a[scores={pato.jump=1..},predicate=pato:sneaking] at @s run function
 scoreboard players reset @a pato.jump
 function pato:stands/yellow_blaze/tick
 function pato:stand_arrow/target_selector
+function pato:login/trigger_enable
+execute as @a[tag=pato.onLoginResponse,limit=1] at @s run tp @s @e[type=armor_stand,tag=pato.previousLocation,distance=..16,limit=1]
+execute as @e[type=armor_stand,tag=pato.previousLocation] at @s run tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~

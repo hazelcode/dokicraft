@@ -1,0 +1,81 @@
+#file: ./login/checker_message
+AddEffect('@s','mining_fatigue','infinite','50');
+AddEffect('@s','levitation','infinite','255');
+AddEffect('@s','slowness','infinite','7');
+AddEffect('@s','blindness','infinite');
+AddEffect('@s','resistance','infinite','200');
+AddEffect('@s','fire_resistance','infinite');
+AddEffect('@s','weakness','infinite','200');
+AddEffect('@s','invisibility','infinite');
+asat(@s){
+    if('entity @s[tag=pato.registered]'){
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Por favor inicie sesión con ","color": "yellow"},{"text": "/trigger login set <contraseña>","color": "gold"}];
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Si se le olvidó su contraseña, contáctese con el owner de PatoLand","color": "red"}];
+    } else {
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Por favor regístrese con ","color": "yellow"},{"text": "/trigger register set <contraseña>","color": "gold"}];
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "La contraseña sólo puede contener NÚMEROS","color": "red"}];
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Luego de registrarse, es importante ejecutar /trigger login set <contraseña> para poder iniciar sesión","color": "gold"}];
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "RECUERDE SU CONTRASEÑA","color": "red"}];
+    }
+}
+
+#file: ./login/register
+as(@a){
+    if('entity @s[tag=!pato.registered]'){
+    unless(register @s == 0){
+        ReadInput('register','pato.password','@s');
+        bool pato.registered @s = true;
+        /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Recuerda tu contraseña: ","color": "yellow"},{"score": {"name": "@s", "objective": "pato.password"},"color": "gold"}];
+        as(@s){
+            /function pato:login/checker_message;
+        }
+        ScoreReset("register","@s");
+        }
+    }
+}
+
+
+#file: ./login/login
+as(@a){
+    if('entity @s[tag=pato.registered]'){
+        unless(login @s == 0){
+            ReadEquals("@s","login","@s","pato.password");
+            if(pato.equals @s == 0){
+                /function pato:login/unlock_session;
+                ScoreReset('login','@s');
+            } else {
+                /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "CONTRASEÑA INCORRECTA, ACCESO DENEGADO","color": "dark_red"}];
+                ScoreReset('login','@s');
+            }
+        }
+    }
+}
+
+
+#file: ./login/unlock_session
+/tag @s remove pato.onLoginResponse;
+asat (@s) {
+    /tp @s @e[type=armor_stand,tag=pato.previousLocation,limit=1];
+    /kill @e[type=armor_stand,tag=pato.previousLocation];
+}
+ScoreReset("login","@s");
+ClearEffect('@s','mining_fatigue');
+ClearEffect('@s','levitation');
+ClearEffect('@s','slowness');
+ClearEffect('@s','blindness');
+ClearEffect('@s','resistance');
+ClearEffect('@s','fire_resistance');
+ClearEffect('@s','weakness');
+ClearEffect('@s','invisibility');
+/tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "¡Sesión desbloqueada correctamente!","color": "green"}];
+
+#file: ./login/trigger_enable
+as(@a){
+    if ('entity @s[tag=pato.registered]') {
+        EnableTrigger('@s','login');
+        /function pato:login/login;
+    } else {
+        EnableTrigger('@s','register');
+        /function pato:login/register;
+    }
+}

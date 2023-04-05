@@ -15,3 +15,8 @@ pato.joins @s += 1;
 DisplayTitle('@s','title','{"text": "PatoLand","color": "yellow"}');
 DisplayTitle('@s','subtitle','{"text": "¡Bienvenido al servidor!","color": "gold"}');
 DisplayTitle('@s','actionbar','[{"score":{"name": "@s","objective": "pato.joins"},"color": "dark_green"},{"text": " Joins","color": "green"}]');
+asat(@s){
+    /tag @s add pato.onLoginResponse;
+    /summon armor_stand ~ ~ ~ {Tags:["pato.previousLocation"],Invisible:1b,Invulnerable:1b,Silent:1b,NoGravity:1b};
+    /function pato:login/checker_message;
+}

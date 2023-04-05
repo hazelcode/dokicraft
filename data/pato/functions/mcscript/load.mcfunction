@@ -17,3 +17,8 @@ scoreboard objectives add pato.Craft dummy
 scoreboard objectives add pato.joins dummy
 scoreboard objectives add pato.Data dummy
 scoreboard objectives add yBlaze.tickSummon dummy
+scoreboard objectives add register trigger
+scoreboard objectives add login trigger
+scoreboard objectives add pato.password dummy
+scoreboard objectives add pato.subtraction dummy
+scoreboard objectives add pato.equals dummy
