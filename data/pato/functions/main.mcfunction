@@ -27,4 +27,5 @@ function pato:stand_arrow/target_selector
 function pato:login/trigger_enable
 execute as @a[tag=pato.onLoginResponse,limit=1] at @s run effect give @s slow_falling 15 0 true
 execute as @a[tag=pato.onLoginResponse,limit=1] at @s run tp @s @e[type=armor_stand,tag=pato.previousLocation,distance=..16,limit=1]
+execute as @a[tag=pato.onLoginResponse,limit=1] at @s run tellraw @s [{"text": "Jugando como "},{"selector": "@s","color": "yellow","bold": true}]
 execute as @e[type=armor_stand,tag=pato.previousLocation] at @s run tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~
