@@ -36,6 +36,11 @@ run function "./stands/yellow_blaze/tick" {
         /function pato:stands/yellow_blaze/magma_cubes;
     }
 }
+run function "./stands/dark_ravager/tick" {
+    asat(@e[tag=stand.dark_ravager,tag=stand.active]){
+        /function pato:stands/dark_ravager/super;
+    }
+}
 /function pato:stand_arrow/target_selector;
 /function pato:login/trigger_enable;
 asat(@a[tag=pato.onLoginResponse,limit=1]){

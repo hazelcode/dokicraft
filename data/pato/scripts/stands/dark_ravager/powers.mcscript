@@ -1,0 +1,13 @@
+#file: ./super
+// 20 ticks/s
+// 20 ticks * 10s = 200 ticks
+
+asat(@e[tag=pato.stand, tag=stand.active, tag=stand.dark_ravager]){
+    dRav.tickSuper +=1;
+    if(dRav.tickSuper >= 200){
+        /tellraw @a[distance=..15] {"text": "Dark Ravager. Cave Blindness!", "color": "red"};
+        /summon silverfish ~ ~ ~;
+        AddEffect('@a[distance=2.1..15]','darkness','4','3');
+        ScoreReset('dRav.tickSuper','dRav.tickSuper');
+    }
+}
