@@ -8,6 +8,5 @@ execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 
 execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 store result score @s pato.equals run scoreboard players operation @s pato.subtraction -= @s pato.password
 execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 run scoreboard players reset @s pato.subtraction
 execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 if score @s pato.equals matches 0 run function pato:login/unlock_session
-execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 if score @s pato.equals matches 0 run scoreboard players reset @s login
 execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 unless score @s pato.equals matches 0 run tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "CONTRASEÑA INCORRECTA, ACCESO DENEGADO","color": "dark_red"}]
-execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 unless score @s pato.equals matches 0 run scoreboard players reset @s login
+execute as @a if entity @s[tag=pato.registered] unless score @s login matches 0 run scoreboard players reset @s login
