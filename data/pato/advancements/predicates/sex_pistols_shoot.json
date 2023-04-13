@@ -1,0 +1,16 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:shot_crossbow",
+        "conditions": {
+          "item": {
+            "nbt": "{pato:{id:4}}"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "pato:stands/sex_pistols/shoot"
+    }
+  }
+  
