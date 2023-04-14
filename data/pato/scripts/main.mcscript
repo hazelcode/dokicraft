@@ -46,7 +46,7 @@ run function "./stands/dark_ravager/tick" {
 asat(@a[tag=pato.onLoginResponse,limit=1]){
     AddEffect('@s','slow_falling','15');
     /tp @s @e[type=armor_stand,tag=pato.previousLocation,distance=..16,limit=1];
-    /tellraw @s [{"text": "Jugando como "},{"selector": "@s","color": "yellow","bold": true}];
+    DisplayTitle('@s','actionbar','[{"text": "Jugando como "},{"selector": "@s","color": "yellow","bold": true}]');
 }
 asat(@e[type=armor_stand,tag=pato.previousLocation]){
     /tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~;

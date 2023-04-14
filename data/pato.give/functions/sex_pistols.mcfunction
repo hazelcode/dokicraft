@@ -1,0 +1,2 @@
+give @s crossbow{pato:{id:4},display:{Name:'{"text": "Sex Pistols","color": "dark_purple","italic":false}'},Unbreakable:1b,Enchantments:[{id:"quick_charge",lvl:3}]}
+tellraw @s [{"text": "Sex Pistols","color": "dark_purple","italic":false},{"text": " giveada a ","color": "white"},{"selector": "@s","color": "white"}]

@@ -26,7 +26,7 @@ var pato.password;
 var pato.subtraction;
 var pato.equals;
 var dRav.tickSuper;
-var pato.changepass trigger;
+var changepass trigger;
 
 // Modales
 modal ScoreReset(scoreboard,target){

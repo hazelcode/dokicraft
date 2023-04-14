@@ -23,4 +23,4 @@ scoreboard objectives add pato.password dummy
 scoreboard objectives add pato.subtraction dummy
 scoreboard objectives add pato.equals dummy
 scoreboard objectives add dRav.tickSuper dummy
-scoreboard objectives add pato.changepass trigger
+scoreboard objectives add changepass trigger

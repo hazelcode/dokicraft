@@ -16,4 +16,8 @@ effect clear @s resistance
 effect clear @s fire_resistance
 effect clear @s weakness
 effect clear @s invisibility
+scoreboard players add @s pato.joins 1
+title @s title {"text": "PatoLand","color": "yellow"}
+title @s subtitle {"text": "¡Bienvenido al servidor!","color": "gold"}
+title @s actionbar [{"score":{"name": "@s","objective": "pato.joins"},"color": "dark_green"},{"text": " Joins","color": "green"}]
 tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "¡Sesión desbloqueada correctamente!","color": "green"}]

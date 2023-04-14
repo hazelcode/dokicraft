@@ -54,14 +54,8 @@ as(@a){
 as(@a){
     if('entity @s[tag=pato.registered, tag=!pato.onLoginResponse]'){
         unless(changepass @s == 0){
-            if('entity @s[tag=pato.enterNewKey]'){
-                ReadInput('changepass','pato.password','@s');
-                /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Contraseña actualizada con éxito. Tu nueva contraseña es ","color": "yellow"},{"score":{"name": "@s","objective": "pato.password"},"color": "gold"}];
-                /tag @s remove pato.enterNewKey;
-            } else {
-                /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Ingresa tu nueva contraseña con ","color": "yellow"},{"text": "/trigger changepass set <contraseña>","color": "gold"}];
-                /tag @s add pato.enterNewKey;
-            }
+            ReadInput('changepass','pato.password','@s');
+            /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "Contraseña actualizada con éxito. Tu nueva contraseña es ","color": "yellow"},{"score":{"name": "@s","objective": "pato.password"},"color": "gold"}];
             ScoreReset('changepass','@s');
         }
     }
@@ -83,15 +77,24 @@ ClearEffect('@s','resistance');
 ClearEffect('@s','fire_resistance');
 ClearEffect('@s','weakness');
 ClearEffect('@s','invisibility');
+
+pato.joins @s += 1;
+DisplayTitle('@s','title','{"text": "PatoLand","color": "yellow"}');
+DisplayTitle('@s','subtitle','{"text": "¡Bienvenido al servidor!","color": "gold"}');
+DisplayTitle('@s','actionbar','[{"score":{"name": "@s","objective": "pato.joins"},"color": "dark_green"},{"text": " Joins","color": "green"}]');
+
 /tellraw @s [{"text": "[SISTEMA DE CUENTAS] ","color": "green"},{"text": "¡Sesión desbloqueada correctamente!","color": "green"}];
 
 #file: ./login/trigger_enable
 as(@a){
     if ('entity @s[tag=pato.registered]') {
-        EnableTrigger('@s','login');
-        EnableTrigger('@s[tag=!pato.onLoginResponse]','changepass');
-        /function pato:login/login;
-        /function pato:login/changepass;
+        if ('entity @s[tag=pato.onLoginResponse]') {
+            EnableTrigger('@s','login');
+            /function pato:login/login;
+        } else {
+            EnableTrigger('@s','changepass');
+            /function pato:login/changepass;
+        }
     } else {
         EnableTrigger('@s','register');
         /function pato:login/register;
