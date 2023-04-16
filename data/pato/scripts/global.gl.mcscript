@@ -65,3 +65,21 @@ modal ReadEquals(inputTarget,inputVar,selectedTarget,selectedVar){
 modal EnableTrigger (target,triggerName) {
     /scoreboard players enable $(target) $(triggerName);
 }
+modal AddEnchantment(enchantID,event = 'player_hurt_entity',slot = 'weapon.mainhand'){
+    ## Encantamiento: $(enchantID) | Condición: $(event).repl("default","player_hurt_entity") | Slot: $(slot)
+    /scoreboard objectives add $(enchantID).$(event) dummy;
+    /scoreboard objectives add ench.$(enchantID).maxLvl dummy;
+    /scoreboard objectives add ench.$(enchantID).lvl dummy;
+    asat(@a){
+        if('entity @s[advancements={pato:ench/$(enchantID)/$(event).repl("default","player_hurt_entity")=true}]'){
+            /scoreboard players set @s $(enchantID).$(event) 1;
+        }
+    }
+    asat(@a[predicate=pato:enchants/$(enchantID)]){
+        /execute store result score @s ench.$(enchantID).lvl run data get entity @s SelectedItem.tag.pato.Enchantments.[0].lvl;
+        if('entity @s[predicate=pato:enchants/$(enchantID)_conds/$(event).repl("default","player_hurt_entity")]'){
+            /function pato:enchants/$(enchantID);
+        }
+        /item modify entity @s $(slot) pato:enchants/$(enchantID);
+    }
+}

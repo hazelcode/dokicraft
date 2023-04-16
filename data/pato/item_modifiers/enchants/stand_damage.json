@@ -1,0 +1,30 @@
+[
+    {
+      "function": "minecraft:set_lore",
+      "entity": "this",
+      "lore": [
+        {
+          "text": "Encantamientos Custom",
+          "color": "green",
+          "bold": true,
+          "italic": true,
+          "underlined": true
+        },
+        {
+          "text": "Perdición de los stands ",
+          "color": "gray",
+          "italic": false,
+          "extra": [
+            {
+              "score": {
+                "name": "@s",
+                "objective": "ench.stand_damage.lvl"
+              }
+            }
+          ]
+        }
+      ],
+      "replace": true
+    }
+  ]
+  

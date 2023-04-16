@@ -1,0 +1,16 @@
+#file: ./stand_damage
+asat(@a[predicate=pato:enchants/stand_damage,predicate=pato:enchants/stand_damage_conds/player_hurt_entity]){
+    if (ench.stand_damage.lvl @s == 1) {
+        /damage @e[tag=pato.stand,distance=..3,limit=1,tag=stand.active] 3 player_attack;
+    } else if (ench.stand_damage.lvl @s == 2) {
+        /damage @e[tag=pato.stand,distance=..4,limit=1,tag=stand.active] 4 player_attack;
+    } else if (ench.stand_damage.lvl @s == 3){
+        /damage @e[tag=pato.stand,distance=..5,limit=1,tag=stand.active] 5 player_attack;
+    } else if (ench.stand_damage.lvl @s == 4){
+        /damage @e[tag=pato.stand,distance=..6,limit=1,tag=stand.active] 6 player_attack;
+    } else if (ench.stand_damage.lvl @s == 5){
+        /damage @e[tag=pato.stand,distance=..7,limit=1,tag=stand.active] 7 player_attack;
+    }
+    /advancement revoke @s only pato:ench/stand_damage/player_hurt_entity;
+    /scoreboard players reset @s stand_damage.default;
+}

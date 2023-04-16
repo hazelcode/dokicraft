@@ -1,0 +1,2 @@
+#file: ./detect
+AddEnchantment('stand_damage','default');
