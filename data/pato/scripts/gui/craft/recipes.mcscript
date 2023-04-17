@@ -1,0 +1,7 @@
+#file: ./craft_result
+asat(@s){
+    if('entity @s[nbt={Items:[{id:"minecraft:book", Count:1b},{id:"minecraft:netherite_sword", Slot:13b},{id:"minecraft:lapis_lazuli", Count:16b},{id:"minecraft:arrow", Count:1b}]}]'){
+        /function pato:gui/craft/enchants/stand_damage;
+        /function pato:gui/craft/enchants/stand_damage_clear;
+    }
+}

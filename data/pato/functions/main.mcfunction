@@ -30,3 +30,4 @@ execute as @a[tag=pato.onLoginResponse,limit=1] at @s run tp @s @e[type=armor_st
 execute as @a[tag=pato.onLoginResponse,limit=1] at @s run title @s actionbar [{"text": "Jugando como "},{"selector": "@s","color": "yellow","bold": true}]
 execute as @e[type=armor_stand,tag=pato.previousLocation] at @s run tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~
 function pato:enchants/detect
+function gui.crafter:main

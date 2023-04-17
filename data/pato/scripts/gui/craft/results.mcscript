@@ -1,0 +1,8 @@
+#file: ./enchants/stand_damage_clear 
+/item replace entity @s container.13 with air
+/clear @s book 1
+/clear @s lapis_lazuli 16
+/clear @s arrow 1
+
+#file: ./enchants/stand_damage
+/give @p netherite_sword{pato:{Enchantments:[{id:"pato:stand_damage",lvl:1}]}}

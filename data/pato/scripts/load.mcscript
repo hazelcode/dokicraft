@@ -21,3 +21,4 @@ pato.currntEvent .Event = 0;
 if(pato.RaidID .ID == 0) {
     /bossbar set pato:raid1 visible false;
 }
+/function gui.crafter:load;

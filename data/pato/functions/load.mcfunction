@@ -26,3 +26,6 @@ scoreboard players set .Event pato.currntEvent 0
 # Bossbar fixer
 #execute if score .ID pato.RaidID matches 0 run bossbar set pato:raid1 visible false
 execute if score .ID pato.RaidID matches 0 run bossbar set pato:raid1 visible false
+
+function gui.crafter:load
+execute unless entity @e[tag=mcscriptTags] at @p run summon armor_stand ~ ~ ~ {Tags:[mcscriptTags],Invisible:1,Invulnerable:1,NoGravity:1}

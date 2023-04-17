@@ -52,3 +52,4 @@ asat(@e[type=armor_stand,tag=pato.previousLocation]){
     /tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~;
 }
 /function pato:enchants/detect;
+/function gui.crafter:main;
