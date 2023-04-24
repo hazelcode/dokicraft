@@ -1,0 +1,2 @@
+#file: ./entity_579/main
+AddLoop('entity_579_summon','200','','execute unless entity @e[tag=entity_579] if predicate pato:chance_579 run function pato.summon:entity_579');

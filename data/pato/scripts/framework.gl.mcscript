@@ -83,3 +83,15 @@ modal AddEnchantment(enchantID,event = 'player_hurt_entity',slot = 'weapon.mainh
         /item modify entity @s $(slot) pato:enchants/$(enchantID);
     }
 }
+modal AddLoop(loopName,interval,loopRoot,command){
+    /scoreboard objectives add loop.$(loopName) dummy;
+    /function pato:$(loopRoot)modalfiles/loop_$(loopName);
+    #file: ./modalfiles/loop_$(loopName)
+    /scoreboard players add loop.$(loopName) loop.$(loopName) 1;
+    if('score loop.$(loopName) loop.$(loopName) matches $(interval)..'){
+        asat(@a){
+            /$(command);
+        }
+        /scoreboard players reset loop.$(loopName) loop.$(loopName);
+    }
+}
