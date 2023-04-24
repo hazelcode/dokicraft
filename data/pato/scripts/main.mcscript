@@ -53,3 +53,4 @@ asat(@e[type=armor_stand,tag=pato.previousLocation]){
 }
 /function pato:enchants/detect;
 /function gui.crafter:main;
+/function pato:entity_579/main
