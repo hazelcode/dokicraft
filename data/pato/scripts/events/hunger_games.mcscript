@@ -1,0 +1,16 @@
+#file: ./minigames/hunger_games/trigger
+DisplayTitle('@a','title','{"text": "Minijuego","color": "green"}');
+DisplayTitle('@a','subtitle','{"text": "Hunger Games","color": "green"}');
+AddEffect('@a','resistance','infinite','100');
+AddEffect('@a','regeneration','infinite','100');
+AddEffect('@a','slow_falling','infinite','255');
+AddEffect('@a','saturation','infinite','4');
+/tellraw @a {"text": "La partida comienza en 5 segundos","color": "yellow"};
+/schedule function pato:events/minigames/hunger_games/party_start 5s;
+
+#file: ./minigames/hunger_games/party_start
+ClearEffect('@a','slow_falling');
+asat(@a){
+    /fill ~5 ~-1 ~5 ~-5 ~-1 ~-5 air replace glass;
+}
+DisplayTitle('@a','title','{"text": "¡Vamos!","color": "green"}');

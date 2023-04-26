@@ -93,5 +93,7 @@ for(1,30){
 as(@r), at(@s){
     if(pato.currntEvent .Event == 1){
         /schedule function pato:events/raids/raid_event1/activate 3s;
+    } else if(pato.currntEvent .Event == 2){
+        /schedule function pato:events/minigames/hunger_games/trigger 3s;
     }
 }

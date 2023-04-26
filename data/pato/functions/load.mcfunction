@@ -22,7 +22,7 @@ scoreboard players set @a pato.demo 1
 # Eventos
 #por el evento de este domingo, estará desactivado por poco tiempo (solo es eso)
 #scoreboard players set .Event pato.currntEvent 1
-scoreboard players set .Event pato.currntEvent 0
+scoreboard players set .Event pato.currntEvent 2
 # Bossbar fixer
 #execute if score .ID pato.RaidID matches 0 run bossbar set pato:raid1 visible false
 execute if score .ID pato.RaidID matches 0 run bossbar set pato:raid1 visible false
