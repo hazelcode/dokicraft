@@ -1,1 +1,1 @@
-execute as @a[limit=1] at @s run summon illusioner ~30 ~ ~30 {Tags:["entity_579"], CustomNameVisible:1b, CustomName:'{"text": "Entity 579","color": "red"}'}
+## execute as @a[limit=1] at @s run summon illusioner ~30 ~ ~30 {Tags:["entity_579"], CustomNameVisible:1b, CustomName:'{"text": "Entity 579","color": "red"}'}
