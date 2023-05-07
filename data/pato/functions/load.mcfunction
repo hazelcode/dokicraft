@@ -7,7 +7,7 @@
 function pato:mcscript/load
 
 # Carga
-function pato:global
+function pato:framework
 # Bossbars
 bossbar add pato:raid1 [{"text": "Asalto - "},{"text": "Entidades restantes: ","color": "yellow"},{"score":{"name": "#Count","objective": "pato.raidEv1Memb"},"color": "yellow"}]
 bossbar set pato:raid1 players @a
