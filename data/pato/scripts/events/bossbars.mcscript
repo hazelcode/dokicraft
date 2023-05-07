@@ -1,4 +1,4 @@
-#file: ./raids/bossbars_counters
+#file: ./raids/bossbar_counters
 if(pato.RaidID .ID == 1){
     /function pato:events/raids/raid_event1/bossbar_counter;
 }
