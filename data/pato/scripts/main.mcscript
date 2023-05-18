@@ -49,7 +49,7 @@ asat(@a[tag=pato.onLoginResponse,limit=1]){
     DisplayTitle('@s','actionbar','[{"text": "Jugando como "},{"selector": "@s","color": "yellow","bold": true}]');
 }
 asat(@e[type=armor_stand,tag=pato.previousLocation]){
-    /tp @a[tag=pato.onLoginResponse,distance=..16] ~ ~16 ~;
+    /tp @a[tag=pato.onLoginResponse,distance=..18] ~ ~16 ~;
 }
 /function pato:enchants/detect;
 /function gui.crafter:main;
