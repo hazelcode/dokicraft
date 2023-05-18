@@ -1,0 +1,14 @@
+{
+    "criteria": {
+      "unlock": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "pato:almond_water"
+        }
+      }
+    },
+    "rewards": {
+      "function": "pato:recipes/almond_water"
+    }
+  }
+  

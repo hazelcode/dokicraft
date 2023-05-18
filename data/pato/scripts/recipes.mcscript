@@ -1,3 +1,4 @@
+// Para ver los IDs de los items, consulte item_ids.md
 #file: ./recipes/eskimo
 RecipeRevoke("eskimo");
 ClearResult('command_block');
@@ -14,6 +15,18 @@ RecipeRevoke('watermelon_water');
 ClearResult('command_block');
 if (pato.Craft @s >= 1) {
     /summon item ~ ~ ~ {Tags:["tagtemporal"],Item:{id:"potion",Count:1b,tag:{pato:{id:1},display:{Name:'{"text": "Agua de sandía","italic":false}'},CustomPotionEffects:[{Id:1,Duration:900},{Id:3,Amplifier:1,Duration:900}],CustomPotionColor:16715544}}};
+}
+CraftSound('item.bottle.fill');
+if(pato.Craft @s >= 1){
+    store("result entity @e[type=item,distance=..1,tag=tagtemporal,limit=1] Item.Count byte 1 run scoreboard players get @s pato.Craft");
+}
+
+#file: ./recipes/almond_water
+RecipeRevoke('almond_water');
+ClearResult('command_block');
+if (pato.Craft @s >= 1) {
+    /summon item ~ ~ ~ {Tags:["tagtemporal"],Item:{id:"potion",Count:1b,tag:{pato:{id:5},display:{Name:'{"text": "Agua de almendras","italic":false,"color": "yellow"}',Lore:['{"text": "Rica y deliciosa agua de almendras, una rica solución acuosa con un toque de sabor a mantequilla"}']},CustomPotionEffects:[{Id:1,Amplifier:2,Duration:1200},{Id:5,Duration:1200},{Id:6,Amplifier:1,Duration:-1},{Id:23,Amplifier:4,Duration:-1},{Id:28,Duration:400},{Id:30,Duration:600}],CustomPotionColor:16580505}};
+    /summon item ~ ~ ~ {Item:{id:"bucket", Count:1b}};
 }
 CraftSound('item.bottle.fill');
 if(pato.Craft @s >= 1){
